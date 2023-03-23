@@ -1,0 +1,307 @@
+.App {
+  min-height: 100svh;
+  height: 100%;
+  width: 100%;
+  background-color: #581b98;
+}
+
+.App nav {
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App nav h2 {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App nav h2 img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.App nav img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.App nav .right {
+  display: flex;
+  align-items: center;
+}
+
+.App nav .right a {
+  display: flex;
+  align-items: center;
+}
+
+.App nav .right a:first-of-type {
+  margin-right: 40px;
+}
+
+.App main {
+  padding: 0 13px;
+  height: calc(100svh - 65px);
+  display: grid;
+  grid-template-columns: 1.15fr 1.15fr 0.63fr;
+}
+
+.App .myVideo,
+.App .strangerVideo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.App .myVideo video,
+.App .strangerVideo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateY(180deg);
+}
+
+.no-video {
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+}
+
+.App main .chat-section {
+  height: calc(100svh - 66px);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0px 10px 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.App main .chat-section h3 {
+  padding: 15px 15px;
+  text-align: center;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.App main .chat-section .chat-div {
+  margin-top: 10px;
+  height: calc(100% - 110px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.App main .chat-section .chat-div h4 {
+  font-weight: 500;
+  text-align: center;
+  color: #aaa;
+  margin: auto;
+  font-size: 16px;
+  width: 180px;
+}
+
+.App main .chat-section .chat-div::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+
+.App main .chat-section .chat-div::-webkit-scrollbar-thumb {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.App main .chat-section .chat {
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
+.App main .chat-section .chat p {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.App main .chat-section .chat p span {
+  font-size: 13px;
+  color: #c6c6c6;
+}
+
+.App main .chat-section .chat > span {
+  white-space: break-spaces;
+}
+
+.App main .chat-section .input-message {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 0 15px 0 10px;
+  border-radius: 20px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.App main .chat-section .input-message input {
+  border: none;
+  padding: 5px 10px;
+  flex: 1;
+  outline: none;
+  font-size: 16px;
+}
+
+.App main .chat-section .input-message button {
+  all: unset;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.App main .chat-section .input-message button img {
+  width: 20px;
+  height: 20px;
+}
+
+.change-btn {
+  all: unset;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fcf243;
+  color: #333;
+  z-index: 5;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+@media (width<=868px) {
+  .App main {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 0.12fr;
+    height: calc(100svh - 48px);
+    position: relative;
+  }
+
+  .App main .myVideo {
+    order: 2;
+  }
+
+  .App main .strangerVideo {
+    order: 1;
+  }
+
+  .App main .chat-section {
+    order: 3;
+    width: calc(100% - 26px);
+    margin: 0;
+    height: 49.5svh;
+    position: absolute;
+    top: 94.7%;
+    left: 13px;
+    transition: top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .reveal {
+    top: 47.5% !important;
+  }
+}
+
+@media (width<=768px) {
+  .App main .chat-section {
+    order: 3;
+    width: calc(100% - 26px);
+    margin: 0;
+    height: 50svh;
+    position: absolute;
+    top: 94.7%;
+    left: 13px;
+    transition: top 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .reveal {
+    top: 46.5% !important;
+  }
+}
+
+@media (width<=680px) {
+  .App nav {
+    padding: 10px 20px;
+  }
+
+  .App nav h2 {
+    font-size: 20px;
+  }
+
+  .App nav h2 img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .App nav .right a:first-of-type {
+    margin-right: 10px;
+  }
+
+  .App nav .right a img {
+    margin: 0;
+    width: 25px;
+    height: 25px;
+  }
+
+  .App nav .right a span {
+    display: none;
+  }
+
+  .App main {
+    padding: 0 5px;
+    grid-template-rows: 1fr 1fr 0.15fr;
+  }
+
+  .App main .chat-section {
+    width: calc(100% - 10px);
+    left: 5px;
+    top: 93.5%;
+  }
+}
+
+@media (width<=480px) {
+  .reveal {
+    top: 45%;
+  }
+}
+
+@media (width<=380px) {
+  .App main {
+    grid-template-rows: 1fr 1fr 0.185fr;
+  }
+
+  .App main .chat-section {
+    top: 92%;
+  }
+
+  .reveal {
+    top: 45.9% !important;
+  }
+}

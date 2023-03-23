@@ -1,0 +1,5 @@
+/video-pal-client/node_modules/
+/video-pal-server/node_modules/
+
+/video-pal-client/.env
+/video-pal-server/.env
